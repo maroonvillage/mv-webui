@@ -3,3 +3,5 @@
 ################################################################################
 
 /maroonvillage-webui/obj
+/maroonvillage-webui/bin/Debug/netcoreapp2.1
+/.vs
