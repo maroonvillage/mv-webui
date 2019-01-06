@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace maroonvillage_webui
+namespace maroonvillage.webui
 {
     public class Program
     {

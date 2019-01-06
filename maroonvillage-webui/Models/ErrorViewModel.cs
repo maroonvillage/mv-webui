@@ -1,6 +1,6 @@
 using System;
 
-namespace maroonvillage_webui.Models
+namespace maroonvillage.webui.Models
 {
     public class ErrorViewModel
     {

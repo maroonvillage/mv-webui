@@ -1,10 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Html;
+@model maroonvillage.webui.Models.HomeModel
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="container">
-    @await Html.PartialAsync("~/Views/Shared/_CarouselPartial.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/_CarouselPartial.cshtml",Model)
 </div>
 
 <div class="row">

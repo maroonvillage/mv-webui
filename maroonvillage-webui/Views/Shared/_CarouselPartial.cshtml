@@ -1,4 +1,6 @@
-﻿
+﻿@using System.Text;
+@using Microsoft.AspNetCore.Html;
+@model maroonvillage.webui.Models.HomeModel
 @*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -12,29 +14,56 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-        <div class="item active">
-            <img src="~/images/la.jpg" alt="Los Angeles" />
-            <div class="carousel-caption">
-                <h3>Los Angeles</h3>
-                <p>LA is always so much fun!</p>
+        @*<div class="item active">
+                <img src="~/images/la.jpg" alt="Los Angeles" />
+                <div class="carousel-caption">
+                    <h3>Los Angeles</h3>
+                    <p>LA is always so much fun!</p>
+                </div>
             </div>
-        </div>
+            <div class="item">
+                <img src="~/images/chicago.jpg" alt="Chicago">
+                <div class="carousel-caption">
+                    <h3>Chicago</h3>
+                    <p>Thank you, Chicago!</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/images/ny.jpg" alt="New York">
+                <div class="carousel-caption">
+                    <h3>New York</h3>
+                    <p>We love the Big Apple!</p>
+                </div>
+            </div>*@
+        @{
+            bool isFirst = true;
+            StringBuilder sb = new StringBuilder();
 
-        <div class="item">
-            <img src="~/images/chicago.jpg" alt="Chicago">
-            <div class="carousel-caption">
-                <h3>Chicago</h3>
-                <p>Thank you, Chicago!</p>
-            </div>
-        </div>
+            sb.Clear();
+            foreach (var sp in Model.Carousel)
+            {
 
-        <div class="item">
-            <img src="~/images/ny.jpg" alt="New York">
-            <div class="carousel-caption">
-                <h3>New York</h3>
-                <p>We love the Big Apple!</p>
-            </div>
-        </div>
+                if (isFirst)
+                {
+                    sb.Append(" <div class='item active'>");
+                    sb.Append("<img src='" + @sp.PhotoUrl + "' alt='" + @sp.Name + "' class='img-fluid' />");
+                    sb.Append("<div class='carousel-caption'>");
+                    sb.Append("<h3" + @sp.Name + "</h3></div></div>");
+                    isFirst = false;
+                }
+                else
+                {
+                    sb.Append(" <div class='item'>");
+                    sb.Append("<img src='" + @sp.PhotoUrl + "' alt='" + @sp.Name + "' class='img-fluid' />");
+                    sb.Append("<div class='carousel-caption'>");
+                    sb.Append("<h3>" + @sp.Name + "</h3></div></div>");
+                }
+
+
+            }
+            HtmlString htmlString2 = new HtmlString(sb.ToString());
+        }
+        @Html.Raw(htmlString2.ToString())
     </div>
 
     <!-- Left and right controls -->
