@@ -39,10 +39,22 @@ body {
 
 /*CParsons: Additional Mark-up starts here */
 
-.item img {
+img {
+
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 125%;
-    height: 100%;
-} 
+    width: 150%;
+    height:100%;
+}
+
+.item active {
+    height: 600px;
+    overflow: hidden;
+}
+
+
+.item {
+    height: 600px;
+    overflow: hidden;
+}

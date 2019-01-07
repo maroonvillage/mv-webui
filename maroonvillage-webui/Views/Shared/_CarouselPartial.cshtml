@@ -46,7 +46,7 @@
                 if (isFirst)
                 {
                     sb.Append(" <div class='item active'>");
-                    sb.Append("<img src='" + @sp.PhotoUrl + "' alt='" + @sp.Name + "' class='img-fluid' />");
+                    sb.Append("<img src='" + @sp.PhotoUrl + "' alt='" + @sp.Name + "' />");
                     sb.Append("<div class='carousel-caption'>");
                     sb.Append("<h3" + @sp.Name + "</h3></div></div>");
                     isFirst = false;
@@ -54,7 +54,7 @@
                 else
                 {
                     sb.Append(" <div class='item'>");
-                    sb.Append("<img src='" + @sp.PhotoUrl + "' alt='" + @sp.Name + "' class='img-fluid' />");
+                    sb.Append("<img src='" + @sp.PhotoUrl + "' alt='" + @sp.Name + "' />");
                     sb.Append("<div class='carousel-caption'>");
                     sb.Append("<h3>" + @sp.Name + "</h3></div></div>");
                 }
